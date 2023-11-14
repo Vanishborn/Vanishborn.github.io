@@ -277,7 +277,7 @@ First Build
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6 hidden-portfolio" >
+                <div class="col-md-4 col-sm-6 hidden-portfolio">
                     <div class="portfolio-item">
                         <div class="thumb">
                             <a href="photo/20230701-01.jpg" data-lightbox="image-1">
@@ -413,7 +413,7 @@ First Build
         loadMoreButton.addEventListener('click', function () {
             for (let i = 0; i < itemsPerPage; i++) {
                 if (itemsToDisplay < hiddenItems.length) {
-                    hiddenItems[itemsToDisplay].style.display = 'block';
+                    hiddenItems[itemsToDisplay].style.display = 'block'; // Display hidden item
                     itemsToDisplay++;
                 } else {
                     // Hide the "Load More" button if there are no more items to display
