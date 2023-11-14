@@ -398,29 +398,29 @@ First Build
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loadMoreButton = document.querySelector('.load-more-button');
+            const hiddenItems = document.querySelectorAll('.hidden-portfolio');
+
+            let itemsToDisplay = 12; // Number of items initially displayed
+            let itemsPerPage = 6;   // Number of items to load on each click
+
+            loadMoreButton.addEventListener('click', function () {
+                for (let i = 0; i < itemsPerPage; i++) {
+                    if (itemsToDisplay < hiddenItems.length) {
+                        hiddenItems[itemsToDisplay].style.display = 'block'; // Display hidden item
+                        itemsToDisplay++;
+                    } else {
+                        // Hide the "Load More" button if there are no more items to display
+                        loadMoreButton.style.display = 'none';
+                        break;
+                    }
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const loadMoreButton = document.querySelector('.load-more-button');
-        const hiddenItems = document.querySelectorAll('.hidden-portfolio');
-
-        let itemsToDisplay = 12; // Number of items initially displayed
-        let itemsPerPage = 6;   // Number of items to load on each click
-
-        loadMoreButton.addEventListener('click', function () {
-            for (let i = 0; i < itemsPerPage; i++) {
-                if (itemsToDisplay < hiddenItems.length) {
-                    hiddenItems[itemsToDisplay].style.display = 'block'; // Display hidden item
-                    itemsToDisplay++;
-                } else {
-                    // Hide the "Load More" button if there are no more items to display
-                    loadMoreButton.style.display = 'none';
-                    break;
-                }
-            }
-        });
-    });
-</script>
