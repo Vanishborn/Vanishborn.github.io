@@ -403,22 +403,24 @@ First Build
             const loadMoreButton = document.querySelector('.load-more-button');
             const hiddenItems = document.querySelectorAll('.hidden-portfolio');
 
-            let itemsToDisplay = 12; // Number of items initially displayed
+            let itemsToDisplay = 0; // Number of items initially displayed
             let itemsPerPage = 6;   // Number of items to load on each click
 
             loadMoreButton.addEventListener('click', function () {
-                for (let i = 0; i < itemsPerPage; i++) {
-                    if (itemsToDisplay < hiddenItems.length) {
-                        hiddenItems[itemsToDisplay].style.display = 'block'; // Display hidden item
-                        itemsToDisplay++;
+                for (let i = itemsToDisplay; i < itemsToDisplay + itemsPerPage; i++) {
+                    if (i < hiddenItems.length) {
+                        hiddenItems[i].style.display = 'block'; // Display hidden item
                     } else {
                         // Hide the "Load More" button if there are no more items to display
                         loadMoreButton.style.display = 'none';
                         break;
                     }
                 }
+
+                itemsToDisplay += itemsPerPage;
             });
         });
+
     </script>
 
 </body>
